@@ -7,13 +7,13 @@ full_factorial <- aov(data = df, Time ~ Rider +
   Rider:Board +
   Rider:Backpack +
   Board:Backpack)
-summary(full_factorial)
-anova_full <- anova(full_factorial)
+full_factorial[1] # output coefficients
+anova(full_factorial)
 
 # remove insignificant interactions
 refined <- aov(data = df, Time ~ Rider +
   Board +
   Backpack +
   Board:Backpack)
-summary(refined)
-anova_refined <- anova(full_factorial)
+refined[1] # output coefficients
+anova(refined)
